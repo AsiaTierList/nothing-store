@@ -1,52 +1,222 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Services</title>
+    <title>PrimeDigital - Premium Subscriptions</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
+        .service-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #6b46c1 0%, #4299e1 100%);
+        }
         #adminBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none; /* Hidden by default */
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <!-- Store Content -->
-    <div class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold text-center my-8">Buy Social Media Services</h1>
-        
-        <!-- Your service cards here -->
-        <div class="bg-white p-6 rounded-lg shadow max-w-md mx-auto">
-            <h2 class="text-xl font-semibold">Instagram Followers</h2>
-            <p class="text-gray-600 mt-2">1000 followers - $5.00</p>
-            <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded">
-                Buy Now
-            </button>
+<body class="bg-gray-50 font-sans">
+    <!-- Animated Navigation -->
+    <nav class="gradient-bg text-white shadow-lg animate__animated animate__fadeIn">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <span class="text-2xl font-bold">PrimeDigital</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="hover:text-gray-200 transition">Services</a>
+                    <a href="#features" class="hover:text-gray-200 transition">Why Us?</a>
+                    <button id="adminBtn" class="hidden bg-indigo-700 hover:bg-indigo-800 px-4 py-2 rounded-full text-sm font-medium transition-all">
+                        Admin Portal
+                    </button>
+                </div>
+            </div>
         </div>
-    </div>
+    </nav>
 
-    <!-- Admin Login Button (Hidden) -->
-    <button id="adminBtn" 
-            onclick="window.location.href='admin.html'" 
-            class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg">
-        Admin Login
-    </button>
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center animate__animated animate__fadeInUp">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Premium Digital Services</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Get verified subscriptions for Crunchyroll, YouTube Premium, Spotify and more!</p>
+            <a href="#services" class="bg-white text-indigo-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition inline-block">
+                Browse Services
+            </a>
+        </div>
+    </section>
 
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Premium Services</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Crunchyroll Card -->
+                <div class="service-card rounded-xl overflow-hidden border border-gray-200 animate__animated animate__fadeIn animate__delay-1s">
+                    <div class="p-6">
+                        <div class="flex justify-center mb-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Crunchyroll_Logo.png" alt="Crunchyroll" class="h-12">
+                        </div>
+                        <h3 class="text-xl font-semibold text-center mb-2">Crunchyroll Premium</h3>
+                        <p class="text-gray-600 text-center mb-4">Ad-free anime streaming</p>
+                        <div class="text-center mb-4">
+                            <span class="text-3xl font-bold text-indigo-600">$3.99</span>
+                            <span class="text-gray-500">/month</span>
+                        </div>
+                        <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg transition">
+                            Subscribe Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- YouTube Premium Card -->
+                <div class="service-card rounded-xl overflow-hidden border border-gray-200 animate__animated animate__fadeIn animate__delay-2s">
+                    <div class="p-6">
+                        <div class="flex justify-center mb-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube Premium" class="h-12">
+                        </div>
+                        <h3 class="text-xl font-semibold text-center mb-2">YouTube Premium</h3>
+                        <p class="text-gray-600 text-center mb-4">Ad-free videos & music</p>
+                        <div class="text-center mb-4">
+                            <span class="text-3xl font-bold text-indigo-600">$6.99</span>
+                            <span class="text-gray-500">/month</span>
+                        </div>
+                        <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg transition">
+                            Subscribe Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Spotify Card -->
+                <div class="service-card rounded-xl overflow-hidden border border-gray-200 animate__animated animate__fadeIn animate__delay-3s">
+                    <div class="p-6">
+                        <div class="flex justify-center mb-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify" class="h-12">
+                        </div>
+                        <h3 class="text-xl font-semibold text-center mb-2">Spotify Premium</h3>
+                        <p class="text-gray-600 text-center mb-4">Unlimited music streaming</p>
+                        <div class="text-center mb-4">
+                            <span class="text-3xl font-bold text-indigo-600">$4.99</span>
+                            <span class="text-gray-500">/month</span>
+                        </div>
+                        <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg transition">
+                            Subscribe Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- McAfee Card -->
+                <div class="service-card rounded-xl overflow-hidden border border-gray-200 animate__animated animate__fadeIn animate__delay-4s">
+                    <div class="p-6">
+                        <div class="flex justify-center mb-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/McAfee_logo.png" alt="McAfee" class="h-12">
+                        </div>
+                        <h3 class="text-xl font-semibold text-center mb-2">McAfee Total</h3>
+                        <p class="text-gray-600 text-center mb-4">Complete device security</p>
+                        <div class="text-center mb-4">
+                            <span class="text-3xl font-bold text-indigo-600">$7.99</span>
+                            <span class="text-gray-500">/month</span>
+                        </div>
+                        <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg transition">
+                            Get Protected
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Why Choose Us?</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-indigo-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Instant Delivery</h3>
+                    <p class="text-gray-600">Get your credentials within minutes after payment</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-indigo-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Secure Payments</h3>
+                    <p class="text-gray-600">All transactions protected with 256-bit encryption</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-indigo-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Money Back</h3>
+                    <p class="text-gray-600">30-day satisfaction guarantee on all services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-2xl font-bold">PrimeDigital</span>
+                    <p class="text-gray-400 mt-2">Premium digital services marketplace</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-indigo-400 transition">Terms</a>
+                    <a href="#" class="hover:text-indigo-400 transition">Privacy</a>
+                    <a href="#" class="hover:text-indigo-400 transition">Contact</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400">
+                <p>© 2023 PrimeDigital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Access Script -->
     <script>
-        // Show admin button when Ctrl+Shift+A is pressed
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && e.shiftKey && e.key === 'A') {
-                document.getElementById('adminBtn').style.display = 'block';
-                // Hide after 10 seconds
+        // Show admin button after secret key combo (Ctrl+Shift+Alt+P)
+        const adminBtn = document.getElementById('adminBtn');
+        let keysPressed = {};
+        
+        document.addEventListener('keydown', (e) => {
+            keysPressed[e.key] = true;
+            
+            if (keysPressed['Control'] && keysPressed['Shift'] && keysPressed['Alt'] && keysPressed['p']) {
+                adminBtn.classList.remove('hidden');
                 setTimeout(() => {
-                    document.getElementById('adminBtn').style.display = 'none';
-                }, 10000);
+                    adminBtn.classList.add('hidden');
+                }, 10000); // Hide after 10 seconds
             }
+        });
+        
+        document.addEventListener('keyup', (e) => {
+            delete keysPressed[e.key];
+        });
+        
+        // Redirect to admin login
+        adminBtn.addEventListener('click', () => {
+            window.location.href = "admin/login.html";
         });
     </script>
 </body>
