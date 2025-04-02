@@ -1,56 +1,53 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Services Store</title>
+    <title>Social Media Services</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        .admin-btn { 
-            position: fixed; 
-            bottom: 20px; 
-            right: 20px; 
-            z-index: 1000;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        #adminBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none; /* Hidden by default */
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Store Header -->
-    <header class="bg-white shadow-sm">
-        <div class="container mx-auto px-4 py-6">
-            <h1 class="text-3xl font-bold text-center text-purple-600">Social Media Services</h1>
-            <p class="text-center text-gray-600 mt-2">Instant delivery guaranteed</p>
-        </div>
-    </header>
-
-    <!-- Warning Banner -->
-    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
-        <div class="container mx-auto">
-            <p class="text-yellow-700">
-                ⚠️ <strong>Notice:</strong> These services may violate platform terms. Use at your own risk.
-            </p>
+<body class="bg-gray-100">
+    <!-- Store Content -->
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center my-8">Buy Social Media Services</h1>
+        
+        <!-- Your service cards here -->
+        <div class="bg-white p-6 rounded-lg shadow max-w-md mx-auto">
+            <h2 class="text-xl font-semibold">Instagram Followers</h2>
+            <p class="text-gray-600 mt-2">1000 followers - $5.00</p>
+            <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded">
+                Buy Now
+            </button>
         </div>
     </div>
 
-    <!-- Services Grid -->
-    <main class="container mx-auto px-4 py-8">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Service Card 1 -->
-            <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-800">Instagram Followers</h3>
-                    <p class="text-gray-600 mt-2">High-quality followers</p>
-                    <p class="text-purple-600 font-bold mt-4">$5 per 1,000</p>
-                    <button class="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded">
-                        Buy Now
-                    </button>
-                </div>
-            </div>
+    <!-- Admin Login Button (Hidden) -->
+    <button id="adminBtn" 
+            onclick="window.location.href='admin.html'" 
+            class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg">
+        Admin Login
+    </button>
 
-            <!-- Service Card 2 -->
-            <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
-                <div class="
+    <script>
+        // Show admin button when Ctrl+Shift+A is pressed
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+                document.getElementById('adminBtn').style.display = 'block';
+                // Hide after 10 seconds
+                setTimeout(() => {
+                    document.getElementById('adminBtn').style.display = 'none';
+                }, 10000);
+            }
+        });
+    </script>
+</body>
+</html>
