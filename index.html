@@ -193,30 +193,35 @@
         </div>
     </footer>
 
-    <!-- Admin Access Script -->
+    <!-- Fixed Admin Access Script -->
     <script>
-        // Show admin button after secret key combo (Ctrl+Shift+Alt+P)
+        // Show admin button after secret key combo (Ctrl+Shift+A)
         const adminBtn = document.getElementById('adminBtn');
-        let keysPressed = {};
         
         document.addEventListener('keydown', (e) => {
-            keysPressed[e.key] = true;
-            
-            if (keysPressed['Control'] && keysPressed['Shift'] && keysPressed['Alt'] && keysPressed['p']) {
+            // Check for Ctrl+Shift+A
+            if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'a') {
+                e.preventDefault();
+                
+                // Open login panel in a popup
+                const width = 400;
+                const height = 500;
+                const left = (screen.width - width)/2;
+                const top = (screen.height - height)/2;
+                window.open('login-panel.html', 'AdminPanel', 
+                    `width=${width},height=${height},left=${left},top=${top}`);
+                
+                // Also show button for 10 seconds
                 adminBtn.classList.remove('hidden');
                 setTimeout(() => {
                     adminBtn.classList.add('hidden');
-                }, 10000); // Hide after 10 seconds
+                }, 10000);
             }
-        });
-        
-        document.addEventListener('keyup', (e) => {
-            delete keysPressed[e.key];
         });
         
         // Redirect to admin login
         adminBtn.addEventListener('click', () => {
-            window.location.href = "admin/login.html";
+            window.location.href = "login-panel.html";
         });
     </script>
 </body>
